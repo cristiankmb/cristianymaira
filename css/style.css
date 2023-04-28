@@ -1,56 +1,58 @@
+@media (prefers-color-scheme: light) {
+
+    /* Override dark mode styles */
+    body {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
 @font-face {
     font-family: 'Stadella';
     src: url(../fonts/Stadella.ttf);
 }
-@font-face {
-    font-family: 'Montserrat-Bold';
-    src: url(../fonts/Montserrat-Bold.ttf);
-}
-@font-face {
-    font-family: 'Montserrat-Medium';
-    src: url(../fonts/Montserrat-Medium.ttf);
-}
-@font-face {
-    font-family: 'Montserrat-Regular';
-    src: url(../fonts/Montserrat-Regular.ttf);
-}
-@font-face {
-    font-family: 'Montserrat-SemiBold';
-    src: url(../fonts/Montserrat-SemiBold.ttf);
-}
-@font-face {
-    font-family: 'Montserrat-Thin';
-    src: url(../fonts/Montserrat-Thin.ttf);
-}
+
 @font-face {
     font-family: 'Nexa-Bold';
     src: url(../fonts/NexaBold.otf);
 }
+
 @font-face {
     font-family: 'Nexa-Book';
     src: url(../fonts/NexaBook.otf);
 }
+
 @font-face {
     font-family: 'Nexa-Regular';
     src: url(../fonts/NexaRegular.otf);
 }
+
 @font-face {
     font-family: 'Nexa-Slab-Heavy-Italic';
     src: url(../fonts/NexaSlabHeavyItalic.ttf);
 }
+
 @font-face {
     font-family: 'Nexa-Slab-Light-Italic';
     src: url(../fonts/NexaSlabLightItalic.ttf);
 }
 
+body {
+    background-color: #FFFFFF;
+    color: #000000;
+}
 
+section {
+    background-color: #FFFFFF;
+    color: #000000;
+}
 
-h1 { 
+h1 {
     font-family: Nexa-Slab-Light-Italic;
     color: #FDCED8;
 }
 
-h2 { 
+h2 {
     font-family: Nexa-Bold;
     color: #FDCED8;
 }
@@ -59,6 +61,7 @@ h3 {
     font-family: Nexa-Regular;
     color: #FDCED8;
 }
+
 p {
     font-family: Nexa-Book;
 }
@@ -86,6 +89,7 @@ footer a {
 footer a:hover {
     color: #aaaaaa;
 }
+
 footer a:focus {
     color: #FDCED8;
 }
@@ -93,15 +97,17 @@ footer a:focus {
 .fw-light {
     font-family: Nexa-Bold;
 }
+
 .btn-default {
     background-color: #94A272 !important;
     border-color: #94A272;
 }
 
 .btn-default:hover {
-    background-color: #94A200 !important;
-    border-color: #94A200;
+    background-color: #6d7702 !important;
+    border-color: #6d7702;
 }
+
 .btn-outline {
     background-color: #FFFFFF !important;
     border-color: #FFFFFF;
@@ -113,14 +119,6 @@ footer a:focus {
     border-color: #D0888E;
 }
 
-#map {
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 600px;
-    max-height: 600px;
-}
-
 #grad {
     display: flex;
     align-items: center;
@@ -130,7 +128,65 @@ footer a:focus {
     background-size: cover;
     color: white;
     border-radius: 10px;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0,0,0,1)), url(../images/banner/01BANNER.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(../images/banner/01BANNER.jpg);
+}
+
+.content-general {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.img-flower {
+    /* Styles for animation */
+    opacity: 0;
+    transform: translateY(6em);
+    transition: transform 6s .50s cubic-bezier(0, 1, .3, 1),
+        opacity .5s .50s ease-out;
+    will-change: transform, opacity;
+}
+
+.img-flower.is-visible {
+    opacity: 1;
+    transform: translateY(-2deg);
+}
+
+#img-flower-left {
+    width: 125px;
+    position: absolute;
+    left: -25px;
+    top: -100px;
+}
+
+#img-flower-right {
+    width: 125px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+#section-line {
+    width: 100%;
+    height: auto;
+}
+
+.section-icon {
+    width: 75px;
+    height: 75px;
+    align-self: center;
+    justify-self: center;
+    /* Set the initial state of the image */
+    opacity: 0;
+    transition: transform 4s .25s cubic-bezier(0, 1, .3, 1),
+        opacity .3s .25s ease-out;
+    will-change: transform, opacity;
+}
+
+.section-icon.is-visible {
+    opacity: 1;
+    transform: translateZ(-2deg);
 }
 
 #section-icon {
@@ -138,19 +194,27 @@ footer a:focus {
     height: 75px;
     align-self: center;
     justify-self: center;
+    /* Set the initial state of the image */
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
 }
-#section-line {
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
+
+#section-icon.active {
+    /* Set the final state of the image */
+    transform: scale(1);
+    opacity: 1;
 }
+
 #section-container {
-    background-color: #ffffff !important;
+    background-color: #ffffffdd !important;
     margin: 0px 10px 0px 10px !important;
-    padding: 60px;
-    width: 400px;
+    padding: 20px;
+    width: 80vw;
+    max-width: 360px;
     border-radius: 5px;
 }
+
 .section-parallax-banner {
     overflow: visible;
     display: flex;
@@ -162,17 +226,18 @@ footer a:focus {
     height: 100vh;
     /* The image used */
     background-image: url('../images/banner/00BANNER.jpg');
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.0) 50%,rgba(0,0,0,1.0) 100%), url('../images/banner/00BANNER.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 50%, rgba(0, 0, 0, 1.0) 100%), url('../images/banner/00BANNER.jpg');
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.section-parallax-banner-title { 
+
+.section-parallax-banner-title {
     font-family: Stadella;
     font-size: 120px;
-    margin: 0px 0px 0px 0px;
+    margin: 130px 0px 0px 0px;
     color: #FFFFFF;
 }
 
@@ -184,30 +249,37 @@ footer a:focus {
     background-color: #FDCED8;
     overflow: hidden;
 }
+
 .section-timer svg {
     display: block;
 }
+
 .section-timer p {
     font-family: Nexa-Slab-Heavy-Italic;
     font-size: 32px;
     color: #D0888E;
     margin-top: 20px;
 }
+
 .section-timer table {
     border-collapse: collapse;
     border-style: hidden;
 }
-.section-timer td, th {
-    border-right: solid 1px #D0888E; 
+
+.section-timer td,
+th {
+    border-right: solid 1px #D0888E;
     border-left: solid 1px #D0888E;
     text-align: center;
     width: 50px;
 }
+
 .section-timer th {
     font-family: Nexa-Regular;
     font-size: 22px;
     color: #D0888E;
 }
+
 .section-timer td {
     font-family: Nexa-Book;
     font-size: 12px;
@@ -221,11 +293,13 @@ footer a:focus {
     align-items: center;
     z-index: 0;
 }
+
 #timer-circle-flower {
     width: 512px;
     height: 512px;
     object-fit: contain;
 }
+
 #timer-circle-white {
     display: flex;
     flex-direction: column;
@@ -237,6 +311,7 @@ footer a:focus {
     height: 256px;
     z-index: 2;
 }
+
 #timer-circle-icon {
     display: flex;
     flex-direction: column;
@@ -245,17 +320,32 @@ footer a:focus {
     width: 90px;
     height: 90px;
 }
+
 #timer-circle-heart {
     width: 40px;
     height: 40px;
 }
-.section-info .icon {
-    width: 75px;
-    height: 75px;
-    margin: 25px 0px 25px 0px;
+
+.animated-svg-heart {
+    /* Set the initial state of the image */
+    transform: scale(0);
+    opacity: 0;
+    animation: scale-in-out 1s ease-out infinite alternate;
 }
 
-.section-gallery img {
+@keyframes scale-in-out {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#section-gallery-img {
     width: 100%;
     height: 100%;
     border-radius: 5px;
@@ -281,13 +371,14 @@ footer a:focus {
     height: 70vh;
     /* The image used */
     background-image: url('../images/banner/00BANNER.jpg');
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.0) 20%,rgba(0,0,0,0.9) 100%), url('../images/banner/00BANNER.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 20%, rgba(0, 0, 0, 0.9) 100%), url('../images/banner/00BANNER.jpg');
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: 10;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .section-parallax-hashtag-two {
     display: flex;
     flex-direction: column;
@@ -298,7 +389,7 @@ footer a:focus {
     height: 70vh;
     /* The image used */
     background-image: url('../images/banner/01BANNER.jpg');
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.0) 20%,rgba(0,0,0,0.9) 100%), url('../images/banner/01BANNER.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 20%, rgba(0, 0, 0, 0.9) 100%), url('../images/banner/01BANNER.jpg');
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: 10;
@@ -358,6 +449,9 @@ footer a:focus {
     color: #677445;
 }
 
+/**************************************************
+* SECTION SETTING STYLES FOR OTHER DEVICES
+**************************************************/
 
 /* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
 
@@ -365,6 +459,7 @@ footer a:focus {
     .section-parallax-banner {
         background-attachment: scroll;
     }
+
     .section-parallax-hashtag {
         background-attachment: scroll;
     }
@@ -378,21 +473,36 @@ footer a:focus {
         width: 100vw;
         height: 100vw;
     }
+
+    #img-flower-left {
+        width: 80px;
+        height: auto;
+    }
+
+    #img-flower-right {
+        width: 80px;
+        height: auto;
+    }
+
     .col-gallery:hover {
         padding: 10px;
     }
-    .section-parallax-banner-title { 
-        margin: 450px 0px 0px 0px;
-        font-size: 60px;
+
+    .section-parallax-banner-title {
+        font-size: 90px;
     }
-    .section-parallax-banner-sub-title { 
-        font-size: 20px;
-    }
+
     .section-parallax-banner {
         background-image: url('../images/banner/00MBANNER.jpg');
-        background-image: linear-gradient(to bottom, rgba(0,0,0,0.0) 50%,rgba(0,0,0,0.9) 100%), url('../images/banner/00MBANNER.jpg');
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 50%, rgba(0, 0, 0, 0.9) 100%), url('../images/banner/00MBANNER.jpg');
     }
+
     .section-parallax-hashtag {
         background-position: center;
+    }
+
+    .section-parallax-hashtag-two {
+        background-position: center;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 50%, rgba(0, 0, 0, 0.9) 100%), url('../images/gallery/02GALLERY.jpg');
     }
 }
