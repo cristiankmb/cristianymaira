@@ -213,7 +213,7 @@ footer a:focus {
 
 #section-container {
     background-color: #ffffffdd !important;
-    margin: 0vw 40vw 0vw 10vw !important;
+    margin: 0vw 50vw 0vw 10vw !important;
     padding: 20px;
     width: 80vw;
     max-width: 360px;
@@ -257,7 +257,7 @@ footer a:focus {
     background-image: url('../images/banner/WB01.jpg');
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: 10;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -274,7 +274,7 @@ footer a:focus {
     background-image: url('../images/banner/WB02.jpg');
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: 10;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -291,7 +291,7 @@ footer a:focus {
     background-image: url('../images/banner/WB03.jpg');
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: 10;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
