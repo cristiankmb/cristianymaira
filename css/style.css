@@ -231,6 +231,12 @@ footer a:focus {
     color: #FFFFFF;
 }
 
+.section-parallax-banner-sub-title {
+    font-family: Nexa-Slab-Heavy-Italic;
+    font-size: 30px !important;
+    color: #D0888E;
+}
+
 .section-parallax-banner-one {
     overflow: visible;
     display: flex;
