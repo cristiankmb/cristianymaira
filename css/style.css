@@ -350,6 +350,7 @@ footer a:focus {
 
 .section-timer svg {
     display: block;
+    shape-rendering: geometricPrecision;
 }
 
 .section-timer p {
@@ -583,15 +584,23 @@ th {
     .section-parallax-banner-two {
         background-position: center;
         background-image: url('../images/banner/WB01.jpg');
+        background-attachment: scroll; /* Evita el problema en iOS */
+        background-size: cover; /* O prueba con contain si sigue con zoom */
+        height: 20vh;
     }
     
     .section-parallax-banner-outfit {
         background-position: center;
         background-image: url('../images/banner/MB02.jpg');
+        background-attachment: scroll; /* Evita el problema en iOS */
+        background-size: cover; /* O prueba con contain si sigue con zoom */
     }
     .section-parallax-banner-three {
         background-position: center;
         background-image: url('../images/banner/MB03.jpg');
+        background-attachment: scroll; /* Evita el problema en iOS */
+        background-size: cover; /* O prueba con contain si sigue con zoom */
+        height: 20vh;
     }
     .modal .img-qr {
         width: 150px;
